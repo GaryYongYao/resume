@@ -1,0 +1,472 @@
+{
+  "picture": {
+    "hidden": false,
+    "url": "",
+    "size": 80,
+    "rotation": 0,
+    "aspectRatio": 1,
+    "borderRadius": 0,
+    "borderColor": "rgba(0, 0, 0, 0.5)",
+    "borderWidth": 0,
+    "shadowColor": "rgba(0, 0, 0, 0.5)",
+    "shadowWidth": 0
+  },
+  "basics": {
+    "name": "Gary Kok Yong Yao",
+    "headline": "Fullstack Product Engineer (React, Next.js, Node.js)",
+    "email": "garyyongyao@gmail.com",
+    "phone": "+6016 923 9899",
+    "location": "Kuala Lumpur, Malaysia",
+    "website": {
+      "url": "",
+      "label": ""
+    },
+    "customFields": [
+      {
+        "id": "019ca962-105f-744d-83e8-859e11c01c59",
+        "icon": "linkedin-logo",
+        "text": "Garyjay YongYao",
+        "link": "https://www.linkedin.com/in/garyjay-kok-yong-yao-611a575a/"
+      },
+      {
+        "id": "019ca962-c150-7549-ad4a-090e7482a4f6",
+        "icon": "github-logo",
+        "text": "GaryYongYao",
+        "link": "https://github.com/GaryYongYao"
+      }
+    ]
+  },
+  "summary": {
+    "title": "",
+    "columns": 1,
+    "hidden": false,
+    "content": "<p>Senior Frontend Engineer with 9+ years of experience architecting and developing scalable web platforms using Next.js, React, TypeScript, and Node.js. Specialized in building high-performance admin systems, CRM platforms, real estate systems, blockchain-integrated applications, and multi-module back-office platforms.</p><p>Strong expertise in fullstack architecture, modular state management, REST and GraphQL API design, and performance optimization. Experienced in managing multi-repository product systems and delivering production-grade platforms across enterprise, startup, and Web3 environments.</p>"
+  },
+  "sections": {
+    "profiles": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": []
+    },
+    "experience": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019ca963-745d-7273-ae23-276c9f044cfb",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "company": "Storytribe",
+          "position": "Senior Fullstack Engineer",
+          "location": "Australia, Remote",
+          "period": "Oct 2025 – Mar 2026",
+          "website": {
+            "url": "https://storytribeapp.com/",
+            "label": ""
+          },
+          "description": "<ul><li><p>Developed and maintained a fullstack storytelling platform consisting of separate frontend and backend repositories.</p></li><li><p>Built frontend application using React/Next.js with modular component architecture and scalable state management.</p></li><li><p>Developed backend services using Node.js and Firebase Cloud Functions to manage business logic and API workflows.</p></li><li><p>Designed structured data models and REST API endpoints to support dynamic storyboard rendering and content management.</p></li><li><p>Implemented authentication flows and secure data handling mechanisms.</p></li><li><p>Optimized performance across frontend rendering and serverless backend infrastructure.</p></li><li><p>Contributed to architectural planning for scalable product growth.</p></li></ul><p></p>",
+          "roles": []
+        },
+        {
+          "id": "019ca966-436e-709d-a185-e347330040f2",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "company": "Sphereus",
+          "position": "Full Stack Product Engineer",
+          "location": "U.S, Remote",
+          "period": "Jan 2024 – Oct 2025",
+          "website": {
+            "url": "https://www.sphereus.co/",
+            "label": ""
+          },
+          "description": "<ul><li><p>Built a multi-tenant platform with separate <strong>Next.js App Router frontend</strong> and <strong>Express/MongoDB backend</strong>.</p></li><li><p>Developed brand, ambassador, and admin/control experiences including creator search, analytics dashboards, overlap analysis, brand safety scoring, messaging, and billing flows.</p></li><li><p>Implemented <strong>role-based route enforcement</strong> using Next.js middleware and service-level access guards.</p></li><li><p>Designed centralized authenticated fetch utilities with cookie-aware backend integration.</p></li><li><p>Implemented <strong>real-time updates via </strong><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"http://Socket.IO\"><strong>Socket.IO</strong></a> and long-running workflows via <strong>SSE proxying through Next.js route handlers</strong>.</p></li><li><p>Structured scalable UI architecture with modular components and progressive loading patterns.</p></li></ul><p></p>",
+          "roles": []
+        },
+        {
+          "id": "019ca967-7920-730f-9fa8-c61c6c434abc",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": true
+          },
+          "company": "Taylor’s University",
+          "position": "Senior Web Developer (Contract)",
+          "location": "Kuala Lumpur, Remote",
+          "period": "Jan 2023 – Jan 2024",
+          "website": {
+            "url": "https://uni.taylors.edu.my/digital-prospectus",
+            "label": ""
+          },
+          "description": "<ul><li><p>Developed multi-language university platforms using Next.js and TypeScript.</p></li><li><p>Built scalable admin systems using ReactJS and Ant Design Pro.</p></li><li><p>Developed backend services with Express.js and SQL to support localization and content workflows.</p></li><li><p>Implemented dynamic PDF generation pipelines using pdf-lib for Digital Prospectus systems.</p></li><li><p>Integrated Salesforce CRM systems to streamline student lead collection.</p></li><li><p>Wrote unit tests using Jest to ensure long-term reliability.</p></li></ul><p></p>",
+          "roles": []
+        },
+        {
+          "id": "019ca967-ebd7-72ef-a373-d45500a6e304",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "company": "Qumon Intelligence",
+          "position": "Full Stack Web Developer",
+          "location": "Kuala Lumpur, Remote",
+          "period": "Aug 2018 – Dec 2022",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<ul><li><p>Developed enterprise-level admin and merchant management systems using ReactJS and TypeScript.</p></li><li><p>Designed backend APIs using Express.js and MongoDB for modular business workflows.</p></li><li><p>Implemented role-based access control systems with structured Swagger API documentation.</p></li><li><p>Built live stream admin dashboards with real-time data management.</p></li><li><p>Maintained scalable architecture across multi-module internal systems.</p></li></ul><p></p>",
+          "roles": []
+        },
+        {
+          "id": "019ca96c-42b1-71f4-b8df-e50306a25885",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "company": "SuperANT",
+          "position": "Web Application Developer",
+          "location": "Kuala Lumpur",
+          "period": "Aug 2017 – Aug 2018",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<ul><li><p>Built CRM functionality with React, Flux, and Webpack, integrating backend APIs and reusable shared components.</p></li><li><p>Developed an automated email workflow system for scheduled monthly blasts using Pug, jQuery, CSS, and Gulp.</p></li><li><p>Contributed to maintainable internal tooling that supported client-facing CRM capabilities.</p></li></ul><p></p>",
+          "roles": []
+        },
+        {
+          "id": "019ca96c-ab1f-705e-b880-89f79f43a722",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "company": "HP Malaysia",
+          "position": "Web Application Developer",
+          "location": "Cyberjaya",
+          "period": "Nov 2014 – Aug 2017",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<ul><li><p>Built internal dashboard interfaces with React and Redux to support operational visibility and team workflows.</p></li><li><p>Worked with change-management processes through HP SDLC and coordinated with DBAs and developers on database-related operations.</p></li><li><p>Gained strong experience working in structured enterprise processes and cross-functional delivery.</p></li></ul><p></p>",
+          "roles": []
+        }
+      ]
+    },
+    "education": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019ca973-cddb-77c7-931b-3b2c5e70e91d",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "school": "INTI International University Nilai",
+          "degree": "Bachelor of Information Technology",
+          "area": "Major in Digital Media",
+          "grade": "",
+          "location": "",
+          "period": "",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": ""
+        }
+      ]
+    },
+    "projects": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019ca982-225f-75ca-9173-b96e351e37eb",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "name": "OUR Realty System (Fullstack Real Estate Platform)",
+          "period": "",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<ul><li><p>Architected and developed a fullstack real estate management system.</p></li><li><p>Designed backend architecture using Node.js, Express, and MongoDB.</p></li><li><p>Built frontend dashboards for property, unit, and sales management.</p></li><li><p>Implemented structured data models for projects, units, commissions, and sales workflows.</p></li><li><p>Developed modular admin panels for reporting and operational use cases.</p></li><li><p>Optimized API structures for scalable property listing management.</p></li></ul><p></p>"
+        },
+        {
+          "id": "019da015-d35b-7017-a550-e07c6f92430e",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "name": "Balance.Fun",
+          "period": "",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<ul><li><p>Built a Web3-enabled product platform using Next.js and TypeScript, focused on scalable frontend architecture and interactive user flows.</p></li><li><p>Implemented wallet authentication and smart contract interaction layers using modern Web3 tooling.</p></li><li><p>Developed real-time dashboard features backed by GraphQL and API-driven data flows.</p></li><li><p>Improved performance through server-side rendering strategies, caching, and modular component design.</p></li><li><p>Built reusable back-office and product UI modules using Ant Design and Tailwind CSS, with support for secure asset handling and animated interfaces.</p></li></ul><p></p>"
+        },
+        {
+          "id": "019ca96e-0d79-778f-9911-b7368a23481d",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "name": "Janzten Landing Page",
+          "period": "",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<ul><li><p>Developed a production-ready <strong>Next.js 15 App Router</strong> frontend using React 19 and Tailwind CSS.</p></li><li><p>Built customer-facing flows including order tracking, order completion, product listings, deals, and delivery service pages.</p></li><li><p>Implemented scalable client state management using <strong>Redux Toolkit</strong>.</p></li><li><p>Structured client API integration with documented endpoints under <code>/client/*</code>.</p></li><li><p>Delivered responsive UI components optimized for performance and maintainability.</p></li></ul><p></p>"
+        },
+        {
+          "id": "019ca972-c205-758b-bc31-7c331447f75a",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "name": "Jantzen CRM",
+          "period": "",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<ul><li><p>Built CRM platform using Vue 3 and TypeScript.</p></li><li><p>Implemented state management using Pinia.</p></li><li><p>Developed dynamic dashboards using ApexCharts.</p></li><li><p>Integrated REST APIs using Axios.</p></li><li><p>Added multi-language support using Vue I18n.</p></li></ul><p></p>"
+        },
+        {
+          "id": "019ca973-2faa-76ed-9052-2711d124ac8d",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "name": "NFT Game – Alpaca Run",
+          "period": "",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<ul><li><p>Developed blockchain-integrated browser game using React and Phaser 3.</p></li><li><p>Implemented encrypted leaderboard submissions.</p></li><li><p>Integrated MetaMask and OpenSea APIs for NFT-based asset rendering.</p></li><li><p>Built backend using Express, MongoDB, and GraphQL.</p></li></ul><p></p>"
+        },
+        {
+          "id": "019ca973-540e-719a-8015-0a9893eb108d",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "name": "Gallaria Website",
+          "period": "",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": "<ul><li><p>Developed custom e-commerce platform using Next.js.</p></li><li><p>Built backend CMS using MongoDB and GraphQL.</p></li><li><p>Integrated Stripe payments and Google Cloud Storage.</p></li></ul><p></p>"
+        }
+      ]
+    },
+    "skills": {
+      "title": "",
+      "columns": 4,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019ca975-574f-733d-9b9c-37ef1876caf3",
+          "hidden": false,
+          "icon": "file-jsx",
+          "name": "React.js",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca975-9277-765f-8ffa-7815739b33aa",
+          "hidden": false,
+          "icon": "file-tsx",
+          "name": "Next.js",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca975-bdc3-7585-9602-d04cd7b3058b",
+          "hidden": false,
+          "icon": "file-ts",
+          "name": "TypeScript",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca975-ddfa-71c3-8531-8b0c2fdf9b39",
+          "hidden": false,
+          "icon": "file-js",
+          "name": "JavaScript (ES6+)",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca976-c838-74f8-a8da-e28e3081027c",
+          "hidden": false,
+          "icon": "file-js",
+          "name": "Redux",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca976-fb6e-7199-b9c2-5d5f1321bea4",
+          "hidden": false,
+          "icon": "file-css",
+          "name": "Tailwind CSS",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca977-5809-750e-a90c-adfdea688467",
+          "hidden": false,
+          "icon": "file-css",
+          "name": "Framer Motion",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca978-0811-73f2-a6e1-e32885a0bb45",
+          "hidden": false,
+          "icon": "file-js",
+          "name": "Node.js",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca978-2aa4-72c8-89f9-4273071fc96a",
+          "hidden": false,
+          "icon": "file-js",
+          "name": "Express.js",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca978-7a00-7158-94d5-40591a529c11",
+          "hidden": false,
+          "icon": "database",
+          "name": "MongoDB (Mongoose)",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca979-004f-713a-a3e9-b88a368dd252",
+          "hidden": false,
+          "icon": "cloud",
+          "name": "Firebase Cloud Functions",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        },
+        {
+          "id": "019ca979-414a-74f8-8592-ca217d2bb5f0",
+          "hidden": false,
+          "icon": "database",
+          "name": "REST API",
+          "proficiency": "",
+          "level": 0,
+          "keywords": []
+        }
+      ]
+    },
+    "languages": {
+      "title": "",
+      "columns": 5,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019ca97a-6e2b-766d-9288-69fa7510a44f",
+          "hidden": false,
+          "language": "English",
+          "fluency": "Native",
+          "level": 0
+        },
+        {
+          "id": "019ca97a-ccdc-7358-a97e-c3cf8db90532",
+          "hidden": false,
+          "language": "Mandarin",
+          "fluency": "Native",
+          "level": 0
+        },
+        {
+          "id": "019ca97b-18c2-7328-aee6-86e3dd6cf32e",
+          "hidden": false,
+          "language": "Malay",
+          "fluency": "Native",
+          "level": 0
+        },
+        {
+          "id": "019ca97b-31f2-71ff-8877-6da9cf52e3f1",
+          "hidden": false,
+          "language": "Cantonese",
+          "fluency": "Native",
+          "level": 0
+        },
+        {
+          "id": "019ca97b-4b49-76b6-8e13-98e44f5ad3c8",
+          "hidden": false,
+          "language": "Japanese",
+          "fluency": "Beginner",
+          "level": 0
+        }
+      ]
+    },
+    "certifications": {
+      "title": "",
+      "columns": 1,
+      "hidden": false,
+      "items": [
+        {
+          "id": "019ca974-6c74-745a-9893-0c820aea588d",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "title": "ITIL Foundation Certificate in IT Service Management",
+          "awarder": "",
+          "date": "",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": ""
+        },
+        {
+          "id": "019ca974-8eb2-7729-aa26-6bfc4e96f2bc",
+          "hidden": false,
+          "options": {
+            "showLinkInTitle": false
+          },
+          "title": "Certified Tester Foundation Level (ISTQB)",
+          "awarder": "",
+          "date": "",
+          "website": {
+            "url": "",
+            "label": ""
+          },
+          "description": ""
+        }
+      ]
+    }
+  }
+}
