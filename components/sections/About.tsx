@@ -1,7 +1,7 @@
 'use client'
 
-import parse from 'html-react-parser'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
+import { renderSanitizedHtml } from '@/lib/sanitize-html'
 
 interface AboutProps {
   content: string
@@ -18,7 +18,7 @@ export function About({ content }: AboutProps) {
           delay={0.05}
           className="font-sans text-muted-foreground leading-relaxed space-y-4 [&_p]:text-base"
         >
-          {parse(content)}
+          {renderSanitizedHtml(content)}
         </ScrollReveal>
       </div>
     </section>

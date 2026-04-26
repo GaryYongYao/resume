@@ -1,8 +1,8 @@
 'use client'
 
-import parse from 'html-react-parser'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 import type { ExperienceItem } from '@/lib/resume'
+import { renderSanitizedHtml } from '@/lib/sanitize-html'
 
 interface ExperienceProps {
   experience: ExperienceItem[]
@@ -48,7 +48,7 @@ export function Experience({ experience }: ExperienceProps) {
                               [&_ul]:list-disc [&_ul]:pl-4 [&_ul]:space-y-1
                               [&_li]:text-muted-foreground [&_strong]:text-foreground"
                 >
-                  {parse(item.description)}
+                  {renderSanitizedHtml(item.description)}
                 </div>
               </ScrollReveal>
             ))}

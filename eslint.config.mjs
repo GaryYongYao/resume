@@ -14,6 +14,9 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     "Interactive Personal Website/**",
     "components/interactive/components/ui/**",
+    "public/sw.js",
+    "public/swe-worker-*.js",
+    "public/workbox-*.js",
   ]),
 ]);
 

@@ -3,17 +3,27 @@ import type { StaticImageData } from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ExternalLink, X, AlertTriangle } from 'lucide-react';
-import alpacaImg from '../imports/Screenshot_2026-04-25_at_8.58.10 PM.png';
-import gallariaImg from '../imports/image.png';
-import ourRealtyImg from '../imports/image-1.png';
-import jantzenLandingImg from '../imports/image-2.png';
-import jantzenCrmImg from '../imports/image-3.png';
+import alpacaDetailImg from '../imports/alpaca-detail.webp';
+import alpacaThumbImg from '../imports/alpaca-thumb.webp';
+import gallariaDetailImg from '../imports/gallaria-detail.webp';
+import gallariaThumbImg from '../imports/gallaria-thumb.webp';
+import ourRealtyDetailImg from '../imports/our-realty-detail.webp';
+import ourRealtyThumbImg from '../imports/our-realty-thumb.webp';
+import jantzenLandingDetailImg from '../imports/jantzen-landing-detail.webp';
+import jantzenLandingThumbImg from '../imports/jantzen-landing-thumb.webp';
+import jantzenCrmDetailImg from '../imports/jantzen-crm-detail.webp';
+import jantzenCrmThumbImg from '../imports/jantzen-crm-thumb.webp';
+
+type ProjectImage = {
+  thumb: string | StaticImageData;
+  detail: string | StaticImageData;
+};
 
 interface Project {
   name: string;
   description: string;
   details: string[];
-  image: string | StaticImageData;
+  image: ProjectImage;
   color: string;
   link?: string;
   disclaimer?: string;
@@ -31,7 +41,10 @@ const projects: Project[] = [
       "Developed modular admin panels for reporting and operational use cases.",
       "Optimized API structures for scalable property listing management."
     ],
-    image: ourRealtyImg,
+    image: {
+      thumb: ourRealtyThumbImg,
+      detail: ourRealtyDetailImg,
+    },
     color: "bg-orange-500/10 dark:bg-orange-500/20"
   },
   {
@@ -44,7 +57,10 @@ const projects: Project[] = [
       "Improved performance through server-side rendering strategies, caching, and modular component design.",
       "Built reusable back-office and product UI modules using Ant Design and Tailwind CSS, with support for secure asset handling and animated interfaces."
     ],
-    image: "https://images.unsplash.com/photo-1716573248961-c1fbf8574057?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2glMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzc3MTE5NjczfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: {
+      thumb: "https://images.unsplash.com/photo-1716573248961-c1fbf8574057?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2glMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzc3MTE5NjczfDA&ixlib=rb-4.1.0&q=70&w=800",
+      detail: "https://images.unsplash.com/photo-1716573248961-c1fbf8574057?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2glMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzc3MTE5NjczfDA&ixlib=rb-4.1.0&q=80&w=1400",
+    },
     color: "bg-blue-500/10 dark:bg-blue-500/20"
   },
   {
@@ -57,7 +73,10 @@ const projects: Project[] = [
       "Structured client API integration with documented endpoints under /client/*.",
       "Delivered responsive UI components optimized for performance and maintainability."
     ],
-    image: jantzenLandingImg,
+    image: {
+      thumb: jantzenLandingThumbImg,
+      detail: jantzenLandingDetailImg,
+    },
     color: "bg-green-500/10 dark:bg-green-500/20"
   },
   {
@@ -70,7 +89,10 @@ const projects: Project[] = [
       "Integrated REST APIs using Axios.",
       "Added multi-language support using Vue I18n."
     ],
-    image: jantzenCrmImg,
+    image: {
+      thumb: jantzenCrmThumbImg,
+      detail: jantzenCrmDetailImg,
+    },
     color: "bg-purple-500/10 dark:bg-purple-500/20"
   },
   {
@@ -82,7 +104,10 @@ const projects: Project[] = [
       "Integrated MetaMask and OpenSea APIs for NFT-based asset rendering.",
       "Built backend using Express, MongoDB, and GraphQL."
     ],
-    image: alpacaImg,
+    image: {
+      thumb: alpacaThumbImg,
+      detail: alpacaDetailImg,
+    },
     color: "bg-pink-500/10 dark:bg-pink-500/20",
     link: "https://run.alpacadabraz.io/",
     disclaimer: "Requires MetaMask to access the site"
@@ -95,7 +120,10 @@ const projects: Project[] = [
       "Built backend CMS using MongoDB and GraphQL.",
       "Integrated Stripe payments and Google Cloud Storage."
     ],
-    image: gallariaImg,
+    image: {
+      thumb: gallariaThumbImg,
+      detail: gallariaDetailImg,
+    },
     color: "bg-zinc-500/10 dark:bg-zinc-500/20",
     link: "https://www.gallaria.com.au/"
   }
@@ -136,8 +164,10 @@ export function Projects() {
               >
                 <div className="absolute inset-0 w-full h-full mix-blend-overlay opacity-50 transition-opacity duration-500 group-hover:opacity-80">
                   <ImageWithFallback 
-                    src={project.image}
+                    src={project.image.thumb}
                     alt={project.name}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -180,8 +210,10 @@ export function Projects() {
             >
               <div className="relative h-48 md:h-64 flex-shrink-0">
                 <ImageWithFallback 
-                  src={projects[selectedProject].image}
+                  src={projects[selectedProject].image.detail}
                   alt={projects[selectedProject].name}
+                  fill
+                  sizes="(min-width: 768px) 896px, 100vw"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />

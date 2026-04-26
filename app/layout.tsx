@@ -21,14 +21,26 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
 }
 
+const themeScript = `
+(() => {
+  try {
+    const theme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  } catch {
+    document.documentElement.classList.add('dark');
+  }
+})();
+`
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${jetbrainsMono.variable} ${ibmPlexSans.variable}`}
+      className={`${jetbrainsMono.variable} ${ibmPlexSans.variable} dark`}
     >
       <body className="bg-background text-foreground antialiased font-sans">
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {children}
       </body>
     </html>

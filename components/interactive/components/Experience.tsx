@@ -153,7 +153,7 @@ export function Experience() {
                     className={`w-full md:w-1/2 pl-12 pr-0 pt-2 ${isEven ? 'md:pr-16 md:pl-0' : 'md:pl-16'}`}
                   >
                     <div 
-                      className={`group p-6 md:p-8 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-100 dark:border-zinc-800/50 shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-blue-900/10 transition-all duration-300 cursor-pointer ${isExpanded ? 'ring-1 ring-blue-500' : ''}`}
+                      className={`group p-6 md:p-8 rounded-xl bg-white dark:bg-[#0a0a0a] border border-zinc-100 dark:border-zinc-800/50 shadow-sm hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-blue-900/10 transition-[background-color,border-color,box-shadow,color] duration-200 cursor-pointer ${isExpanded ? 'ring-1 ring-blue-500' : ''}`}
                       onClick={() => setExpandedIndex(isExpanded ? null : index)}
                     >
                       <div className={`flex flex-col mb-4 gap-2 ${isEven ? 'md:items-end md:text-right' : 'items-start text-left'}`}>

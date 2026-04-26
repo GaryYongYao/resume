@@ -17,11 +17,11 @@ export function Footer() {
         </motion.div>
 
         <div className="flex items-center gap-8">
-          <a href="https://github.com/GaryYongYao" target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-white transition-colors p-3 bg-zinc-900 rounded-full hover:bg-zinc-800">
+          <a href="https://github.com/GaryYongYao" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors p-3 bg-zinc-900 rounded-full hover:bg-zinc-800">
             <ExternalLink size={24} />
             <span className="sr-only">GitHub</span>
           </a>
-          <a href="https://www.linkedin.com/in/garyjay-kok-yong-yao-611a575a/" target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-blue-500 transition-colors p-3 bg-zinc-900 rounded-full hover:bg-zinc-800">
+          <a href="https://www.linkedin.com/in/garyjay-kok-yong-yao-611a575a/" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-blue-500 transition-colors p-3 bg-zinc-900 rounded-full hover:bg-zinc-800">
             <ExternalLink size={24} />
             <span className="sr-only">LinkedIn</span>
           </a>

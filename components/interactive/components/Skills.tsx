@@ -48,7 +48,7 @@ export function Skills() {
             <motion.div
               key={index}
               variants={item}
-              className="px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-[#111] border border-zinc-100 dark:border-zinc-800 text-lg font-medium text-zinc-800 dark:text-zinc-200 shadow-sm hover:shadow-md hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all cursor-default"
+              className="px-6 py-4 rounded-2xl bg-zinc-50 dark:bg-[#111] border border-zinc-100 dark:border-zinc-800 text-lg font-medium text-zinc-800 dark:text-zinc-200 shadow-sm hover:shadow-md hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-[background-color,border-color,box-shadow,color] duration-200 cursor-default"
               style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}
             >
               {skill}

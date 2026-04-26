@@ -45,3 +45,4 @@ docs
 # next-pwa generated service workers
 /public/sw.js
 /public/swe-worker-*.js
+/public/workbox-*.js

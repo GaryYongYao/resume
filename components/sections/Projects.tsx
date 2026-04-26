@@ -1,8 +1,8 @@
 'use client'
 
-import parse from 'html-react-parser'
 import { ScrollReveal } from '@/components/shared/ScrollReveal'
 import type { ProjectItem } from '@/lib/resume'
+import { renderSanitizedHtml } from '@/lib/sanitize-html'
 
 interface ProjectsProps {
   projects: ProjectItem[]
@@ -40,7 +40,7 @@ export function Projects({ projects }: ProjectsProps) {
                               [&_ul]:list-disc [&_ul]:pl-4 [&_ul]:space-y-1
                               [&_strong]:text-foreground"
                 >
-                  {parse(project.description)}
+                  {renderSanitizedHtml(project.description)}
                 </div>
               </div>
             </ScrollReveal>

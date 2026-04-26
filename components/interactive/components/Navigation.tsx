@@ -2,8 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export function Navigation({ theme, toggleTheme }: { theme: string, toggleTheme: () => void }) {
+function getInitialTheme() {
+  if (typeof document === 'undefined') {
+    return 'dark';
+  }
+
+  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+}
+
+export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,12 +29,20 @@ export function Navigation({ theme, toggleTheme }: { theme: string, toggleTheme:
     }
   };
 
+  const toggleTheme = () => {
+    const nextTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+
+    document.documentElement.classList.toggle('dark', nextTheme === 'dark');
+    localStorage.setItem('theme', nextTheme);
+    setTheme(nextTheme);
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color,padding] duration-200 ${
         scrolled 
           ? 'bg-white/70 dark:bg-black/70 backdrop-blur-xl border-b border-zinc-200/50 dark:border-white/10 py-4' 
           : 'bg-transparent py-6'

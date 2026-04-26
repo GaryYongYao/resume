@@ -79,7 +79,7 @@ export function Hero() {
               </div>
               Kuala Lumpur, Malaysia
             </div>
-            <a href="https://github.com/GaryYongYao" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-zinc-700 dark:text-zinc-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors group">
+            <a href="https://github.com/GaryYongYao" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-zinc-700 dark:text-zinc-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors group">
               <div className="w-10 h-10 rounded-full bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <ExternalLink size={18} />
               </div>
