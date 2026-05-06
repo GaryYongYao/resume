@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import type { StaticImageData } from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { ExternalLink, X, AlertTriangle } from 'lucide-react';
+import { ImageViewer } from './ImageViewer';
+import { ExternalLink, X } from 'lucide-react';
 import alpacaDetailImg from '../imports/alpaca-detail.webp';
 import alpacaThumbImg from '../imports/alpaca-thumb.webp';
 import gallariaDetailImg from '../imports/gallaria-detail.webp';
@@ -13,6 +14,30 @@ import jantzenLandingDetailImg from '../imports/jantzen-landing-detail.webp';
 import jantzenLandingThumbImg from '../imports/jantzen-landing-thumb.webp';
 import jantzenCrmDetailImg from '../imports/jantzen-crm-detail.webp';
 import jantzenCrmThumbImg from '../imports/jantzen-crm-thumb.webp';
+import ourGallery01 from '../../../assets/projects/our/01.jpeg';
+import ourGallery02 from '../../../assets/projects/our/02.jpeg';
+import ourGallery03 from '../../../assets/projects/our/03.jpeg';
+import ourGallery04 from '../../../assets/projects/our/04.jpeg';
+import gallariaGallery01 from '../../../assets/projects/gallaria/01.png';
+import gallariaGallery02 from '../../../assets/projects/gallaria/02.png';
+import gallariaGallery03 from '../../../assets/projects/gallaria/03.png';
+import gallariaGallery04 from '../../../assets/projects/gallaria/04.png';
+import alpacaGallery01 from '../../../assets/projects/alpaca/01.png';
+import alpacaGallery02 from '../../../assets/projects/alpaca/02.png';
+import alpacaGallery03 from '../../../assets/projects/alpaca/03.png';
+import alpacaGallery04 from '../../../assets/projects/alpaca/04.png';
+import balanceGallery01 from '../../../assets/projects/balance/01.png';
+import balanceGallery02 from '../../../assets/projects/balance/02.png';
+import balanceGallery03 from '../../../assets/projects/balance/03.png';
+import balanceGallery04 from '../../../assets/projects/balance/04.png';
+import janztenGallery01 from '../../../assets/projects/janzten/01.png';
+import janztenGallery02 from '../../../assets/projects/janzten/02.png';
+import janztenGallery03 from '../../../assets/projects/janzten/03.png';
+import janztenGallery04 from '../../../assets/projects/janzten/04.png';
+import janztenCrmGallery01 from '../../../assets/projects/janzten-crm/01.png';
+import janztenCrmGallery02 from '../../../assets/projects/janzten-crm/02.png';
+import janztenCrmGallery03 from '../../../assets/projects/janzten-crm/03.png';
+import janztenCrmGallery04 from '../../../assets/projects/janzten-crm/04.png';
 
 type ProjectImage = {
   thumb: string | StaticImageData;
@@ -24,9 +49,9 @@ interface Project {
   description: string;
   details: string[];
   image: ProjectImage;
+  gallery?: Array<string | StaticImageData>;
   color: string;
   link?: string;
-  disclaimer?: string;
 }
 
 const projects: Project[] = [
@@ -45,6 +70,7 @@ const projects: Project[] = [
       thumb: ourRealtyThumbImg,
       detail: ourRealtyDetailImg,
     },
+    gallery: [ourGallery01, ourGallery02, ourGallery03, ourGallery04],
     color: "bg-orange-500/10 dark:bg-orange-500/20"
   },
   {
@@ -61,6 +87,7 @@ const projects: Project[] = [
       thumb: "https://images.unsplash.com/photo-1716573248961-c1fbf8574057?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2glMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzc3MTE5NjczfDA&ixlib=rb-4.1.0&q=70&w=800",
       detail: "https://images.unsplash.com/photo-1716573248961-c1fbf8574057?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2glMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzc3MTE5NjczfDA&ixlib=rb-4.1.0&q=80&w=1400",
     },
+    gallery: [balanceGallery01, balanceGallery02, balanceGallery03, balanceGallery04],
     color: "bg-blue-500/10 dark:bg-blue-500/20"
   },
   {
@@ -77,6 +104,7 @@ const projects: Project[] = [
       thumb: jantzenLandingThumbImg,
       detail: jantzenLandingDetailImg,
     },
+    gallery: [janztenGallery01, janztenGallery02, janztenGallery03, janztenGallery04],
     color: "bg-green-500/10 dark:bg-green-500/20"
   },
   {
@@ -93,6 +121,7 @@ const projects: Project[] = [
       thumb: jantzenCrmThumbImg,
       detail: jantzenCrmDetailImg,
     },
+    gallery: [janztenCrmGallery01, janztenCrmGallery02, janztenCrmGallery03, janztenCrmGallery04],
     color: "bg-purple-500/10 dark:bg-purple-500/20"
   },
   {
@@ -109,8 +138,8 @@ const projects: Project[] = [
       detail: alpacaDetailImg,
     },
     color: "bg-pink-500/10 dark:bg-pink-500/20",
-    link: "https://run.alpacadabraz.io/",
-    disclaimer: "Requires MetaMask to access the site"
+    link: "https://alpaca-run.vercel.app/",
+    gallery: [alpacaGallery01, alpacaGallery02, alpacaGallery03, alpacaGallery04]
   },
   {
     name: "Gallaria Website",
@@ -124,6 +153,7 @@ const projects: Project[] = [
       thumb: gallariaThumbImg,
       detail: gallariaDetailImg,
     },
+    gallery: [gallariaGallery01, gallariaGallery02, gallariaGallery03, gallariaGallery04],
     color: "bg-zinc-500/10 dark:bg-zinc-500/20",
     link: "https://www.gallaria.com.au/"
   }
@@ -131,6 +161,12 @@ const projects: Project[] = [
 
 export function Projects() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [selectedGalleryImage, setSelectedGalleryImage] = useState<string | StaticImageData | null>(null);
+
+  const closeProjectModal = () => {
+    setSelectedGalleryImage(null);
+    setSelectedProject(null);
+  };
 
   return (
     <>
@@ -192,13 +228,13 @@ export function Projects() {
       {/* Modal */}
       <AnimatePresence>
         {selectedProject !== null && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-12">
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 sm:p-6 md:p-12">
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-              onClick={() => setSelectedProject(null)}
+              onClick={closeProjectModal}
             />
             
             <motion.div 
@@ -206,7 +242,7 @@ export function Projects() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-4xl bg-white dark:bg-[#111] rounded-[2rem] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
+              className="relative h-[90vh] max-h-[780px] w-full max-w-[calc(100vw-1rem)] bg-white dark:bg-[#111] rounded-3xl shadow-2xl overflow-hidden flex flex-col sm:max-w-5xl sm:rounded-[2rem]"
             >
               <div className="relative h-48 md:h-64 flex-shrink-0">
                 <ImageWithFallback 
@@ -218,62 +254,95 @@ export function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                 <button 
-                  onClick={() => setSelectedProject(null)}
+                  onClick={closeProjectModal}
                   className="absolute top-4 right-4 p-2 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md transition-colors"
                 >
                   <X size={20} />
                 </button>
-                <div className="absolute bottom-6 left-6 md:left-8 pr-6">
-                  <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight" style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}>{projects[selectedProject].name}</h3>
+                <div className="absolute bottom-5 left-5 pr-6 md:bottom-6 md:left-8">
+                  <h3 className="text-2xl font-bold text-white tracking-tight md:text-4xl" style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}>{projects[selectedProject].name}</h3>
                 </div>
               </div>
 
-              <div className="p-6 md:p-8 overflow-y-auto">
-                <p className="text-lg text-zinc-600 dark:text-zinc-300 mb-8 leading-relaxed">
-                  {projects[selectedProject].description}
-                </p>
+              <div className="flex-1 min-h-0 overflow-y-auto p-4 sm:p-6 md:p-8 lg:overflow-hidden">
+                <div className="grid gap-8 lg:h-full lg:min-h-0 lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)]">
+                  <div className="lg:min-h-0 lg:overflow-y-auto lg:pr-1">
+                    <p className="text-lg text-zinc-600 dark:text-zinc-300 mb-8 leading-relaxed">
+                      {projects[selectedProject].description}
+                    </p>
 
-                <h4 className="text-xl font-bold mb-4 text-zinc-900 dark:text-zinc-50 border-b border-zinc-200 dark:border-zinc-800 pb-2" style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}>
-                  Key Implementations
-                </h4>
-                
-                <ul className="space-y-4">
-                  {projects[selectedProject].details.map((detail, idx) => (
-                    <li key={idx} className="flex items-start gap-4 text-zinc-600 dark:text-zinc-400">
-                      <span className="text-blue-500 font-bold mt-1" style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}>{'->'}</span>
-                      <span className="leading-relaxed">{detail}</span>
-                    </li>
-                  ))}
-                </ul>
+                    <h4 className="text-xl font-bold mb-4 text-zinc-900 dark:text-zinc-50 border-b border-zinc-200 dark:border-zinc-800 pb-2" style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}>
+                      Key Implementations
+                    </h4>
+                    
+                    <ul className="space-y-4">
+                      {projects[selectedProject].details.map((detail, idx) => (
+                        <li key={idx} className="grid grid-cols-[24px_minmax(0,1fr)] items-start gap-3 text-zinc-600 dark:text-zinc-400">
+                          <span className="mt-1 block w-6 shrink-0 whitespace-nowrap text-blue-500 font-bold" style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}>{'->'}</span>
+                          <span className="leading-relaxed">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                {(projects[selectedProject].link || projects[selectedProject].disclaimer) && (
-                  <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    {projects[selectedProject].disclaimer ? (
-                      <div className="flex items-center gap-2 text-sm text-amber-600 dark:text-amber-500 font-medium bg-amber-50 dark:bg-amber-500/10 px-4 py-2 rounded-lg" style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}>
-                        <AlertTriangle size={16} />
-                        {projects[selectedProject].disclaimer}
-                      </div>
-                    ) : (
-                      <div className="flex-1" />
-                    )}
                     {projects[selectedProject].link && (
-                      <a 
-                        href={projects[selectedProject].link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors shadow-lg shadow-blue-500/30 w-full sm:w-auto justify-center" 
-                        style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}
-                      >
-                        Visit Project <ExternalLink size={18} />
-                      </a>
+                      <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-800 flex justify-start">
+                        <a 
+                          href={projects[selectedProject].link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-colors shadow-lg shadow-blue-500/30 w-full sm:w-auto justify-center" 
+                          style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}
+                        >
+                          Visit Project <ExternalLink size={18} />
+                        </a>
+                      </div>
                     )}
                   </div>
-                )}
+
+                  {projects[selectedProject].gallery && (
+                    <div className="lg:min-h-0 lg:overflow-y-auto">
+                      <h4 className="text-xl font-bold mb-4 text-zinc-900 dark:text-zinc-50 border-b border-zinc-200 dark:border-zinc-800 pb-2" style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}>
+                        Gallery
+                      </h4>
+                      <div className="grid grid-cols-2 gap-3 lg:grid-cols-1">
+                        {projects[selectedProject].gallery.map((image, idx) => (
+                          <button
+                            key={idx}
+                            type="button"
+                            onClick={() => setSelectedGalleryImage(image)}
+                            className="group relative aspect-[16/10] overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100 text-left transition-transform hover:scale-[1.02] focus:outline-none dark:border-zinc-800 dark:bg-zinc-900"
+                            aria-label={`Open ${projects[selectedProject].name} gallery image ${idx + 1}`}
+                          >
+                            <ImageWithFallback
+                              src={image}
+                              alt={`${projects[selectedProject].name} gallery ${idx + 1}`}
+                              fill
+                              sizes="(min-width: 1024px) 360px, 50vw"
+                              className="object-cover transition-[filter,transform] duration-300 group-hover:scale-105 group-hover:blur-sm"
+                            />
+                            <span
+                              className="absolute inset-0 flex items-center justify-center bg-black/35 text-sm font-semibold text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                              style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}
+                            >
+                              View image
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
+
+      <ImageViewer
+        image={selectedGalleryImage}
+        alt="Expanded project gallery image"
+        onClose={() => setSelectedGalleryImage(null)}
+      />
     </>
   );
 }

@@ -60,5 +60,8 @@ import garyPdf from '@/assets/gary.pdf'
 ```
 webpack `asset/resource` rule in `next.config.ts` handles this.
 
+## Build Artifacts
+`npm run build` regenerates the PWA service worker at `public/sw.js`. Treat this as expected build output and do not restore it just because it changed after a build.
+
 ## Future Pages
 Add under `app/[page]/page.tsx`. Shell (FAB + NavDrawer) is in `app/layout.tsx` and is inherited automatically.

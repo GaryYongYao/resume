@@ -1,6 +1,29 @@
 import React, { useState } from 'react';
+import type { StaticImageData } from 'next/image';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Images, X } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageViewer } from './ImageViewer';
+import storytribeGallery01 from '../../../assets/experience/storytribe/01.png';
+import storytribeGallery02 from '../../../assets/experience/storytribe/02.png';
+import storytribeGallery03 from '../../../assets/experience/storytribe/03.png';
+import storytribeGallery04 from '../../../assets/experience/storytribe/04.png';
+import sphereusGallery01 from '../../../assets/experience/sphereus/01.png';
+import sphereusGallery02 from '../../../assets/experience/sphereus/02.png';
+import sphereusGallery03 from '../../../assets/experience/sphereus/03.png';
+import sphereusGallery04 from '../../../assets/experience/sphereus/04.png';
+import taylorsGallery01 from '../../../assets/experience/taylors/01.png';
+import taylorsGallery02 from '../../../assets/experience/taylors/02.png';
+import taylorsGallery03 from '../../../assets/experience/taylors/03.png';
+import taylorsGallery04 from '../../../assets/experience/taylors/04.png';
+import qumonGallery01 from '../../../assets/experience/qumon/01.png';
+import qumonGallery02 from '../../../assets/experience/qumon/02.png';
+import qumonGallery03 from '../../../assets/experience/qumon/03.png';
+
+type ExperienceGallery = {
+  company: string;
+  images: StaticImageData[];
+};
 
 const experiences = [
   {
@@ -17,7 +40,8 @@ const experiences = [
       "Implemented authentication flows and secure data handling mechanisms.",
       "Optimized performance across frontend rendering and serverless backend infrastructure.",
       "Contributed to architectural planning for scalable product growth."
-    ]
+    ],
+    gallery: [storytribeGallery01, storytribeGallery02, storytribeGallery03, storytribeGallery04]
   },
   {
     company: "Sphereus",
@@ -32,7 +56,8 @@ const experiences = [
       "Designed centralized authenticated fetch utilities with cookie-aware backend integration.",
       "Implemented real-time updates via Socket.IO and long-running workflows via SSE proxying through Next.js route handlers.",
       "Structured scalable UI architecture with modular components and progressive loading patterns."
-    ]
+    ],
+    gallery: [sphereusGallery01, sphereusGallery02, sphereusGallery03, sphereusGallery04]
   },
   {
     company: "Taylor’s University",
@@ -47,7 +72,8 @@ const experiences = [
       "Implemented dynamic PDF generation pipelines using pdf-lib for Digital Prospectus systems.",
       "Integrated Salesforce CRM systems to streamline student lead collection.",
       "Wrote unit tests using Jest to ensure long-term reliability."
-    ]
+    ],
+    gallery: [taylorsGallery01, taylorsGallery02, taylorsGallery03, taylorsGallery04]
   },
   {
     company: "Qumon Intelligence",
@@ -61,7 +87,8 @@ const experiences = [
       "Implemented role-based access control systems with structured Swagger API documentation.",
       "Built live stream admin dashboards with real-time data management.",
       "Maintained scalable architecture across multi-module internal systems."
-    ]
+    ],
+    gallery: [qumonGallery01, qumonGallery02, qumonGallery03]
   },
   {
     company: "SuperANT",
@@ -92,6 +119,23 @@ const experiences = [
 export function Experience() {
   const ref = React.useRef(null);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const [selectedGallery, setSelectedGallery] = useState<ExperienceGallery | null>(null);
+  const [selectedGalleryImage, setSelectedGalleryImage] = useState<StaticImageData | null>(null);
+
+  React.useEffect(() => {
+    if (!selectedGallery || selectedGalleryImage) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedGallery(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedGallery, selectedGalleryImage]);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -204,6 +248,23 @@ export function Experience() {
                                     </li>
                                   ))}
                                 </ul>
+                                {exp.gallery && (
+                                  <button
+                                    type="button"
+                                    onClick={(event) => {
+                                      event.stopPropagation();
+                                      setSelectedGallery({
+                                        company: exp.company,
+                                        images: exp.gallery
+                                      });
+                                    }}
+                                    className="mt-5 inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 transition-colors hover:border-blue-500 hover:text-blue-500 focus:outline-none dark:border-zinc-800 dark:text-zinc-400 dark:hover:border-blue-400 dark:hover:text-blue-400"
+                                    style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}
+                                  >
+                                    <Images size={15} />
+                                    View media
+                                  </button>
+                                )}
                               </div>
                             </motion.div>
                           )}
@@ -217,6 +278,74 @@ export function Experience() {
           </div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedGallery && (
+          <div className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-6">
+            <motion.button
+              type="button"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 cursor-default bg-black/70 backdrop-blur-sm"
+              onClick={() => setSelectedGallery(null)}
+              aria-label="Close experience gallery"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96, y: 16 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 16 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="relative w-full max-w-3xl rounded-3xl border border-white/10 bg-white p-4 shadow-2xl dark:bg-[#0a0a0a] sm:p-5"
+            >
+              <div className="mb-4 flex items-center justify-between gap-4">
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-50" style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}>
+                  {selectedGallery.company} media
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => setSelectedGallery(null)}
+                  className="rounded-full p-2 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus:outline-none dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
+                  aria-label="Close experience gallery"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {selectedGallery.images.map((image, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setSelectedGalleryImage(image)}
+                    className="group relative aspect-[16/10] overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100 text-left transition-transform hover:scale-[1.02] focus:outline-none dark:border-zinc-800 dark:bg-zinc-900"
+                    aria-label={`Open ${selectedGallery.company} media ${idx + 1}`}
+                  >
+                    <ImageWithFallback
+                      src={image}
+                      alt={`${selectedGallery.company} media ${idx + 1}`}
+                      fill
+                      sizes="(min-width: 768px) 384px, 50vw"
+                      className="object-cover transition-[filter,transform] duration-300 group-hover:scale-105 group-hover:blur-sm"
+                    />
+                    <span
+                      className="absolute inset-0 flex items-center justify-center bg-black/35 text-sm font-semibold text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      style={{ fontFamily: "var(--font-jetbrains-mono), monospace" }}
+                    >
+                      View image
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      <ImageViewer
+        image={selectedGalleryImage}
+        alt="Expanded experience media image"
+        onClose={() => setSelectedGalleryImage(null)}
+      />
     </section>
   );
 }
